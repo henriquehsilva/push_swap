@@ -6,14 +6,14 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/06/15 09:23:14 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/06/15 09:38:51 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME 	= push_swap.a
 CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
 RM      = rm -rf
-LIBFT_DIR = ./include/libft
+LIBFT_DIR = ./libft
 LIBFT   = $(LIBFT_DIR)/libft.a
 SRCS    = 
 
