@@ -6,33 +6,34 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/06/15 09:38:51 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/06/17 07:22:32 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME 	= push_swap.a
+NAME 	= push_swap
+
 CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
 RM      = rm -rf
 LIBFT_DIR = ./libft
 LIBFT   = $(LIBFT_DIR)/libft.a
-SRCS    = 
+SRC    = \
+		push_swap.c
 
-OBJS    = $(SRCS:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 all: $(LIBFT) $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJS)
-	cp $(LIBFT) $@
-	ar rcs $@ $^
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -Iincludes -I$(LIBFT_DIR) -c $< -o $@
+%.o: %.c push_swap.h
+	$(CC) $(CFLAGS) -I$(LIBFT_DIR) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJ)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
