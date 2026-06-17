@@ -6,7 +6,7 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/06/17 07:22:32 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/06/17 07:50:16 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME 	= push_swap
@@ -17,7 +17,7 @@ RM      = rm -rf
 LIBFT_DIR = ./libft
 LIBFT   = $(LIBFT_DIR)/libft.a
 SRC    = \
-		push_swap.c
+		main.c
 
 OBJ = $(SRC:.c=.o)
 
