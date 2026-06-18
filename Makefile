@@ -6,7 +6,7 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/06/18 08:51:23 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/06/18 12:21:59 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,10 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
 	$(CC) $(CFLAGS) $(OBJ) $(FT_PRINTF) $(LIBFT) -o $(NAME)
 
-$(LIBFT): FORCE
+$(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-$(FT_PRINTF): FORCE
+$(FT_PRINTF):
 	$(MAKE) -C $(FT_PRINTF_DIR)
 
 %.o: %.c push_swap.h
