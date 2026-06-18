@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 08:27:16 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/06/17 10:21:06 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/06/18 08:16:36 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /* *************************************** */
 
 # include "libft/libft.h"
-# include <stdarg.h>
+# include "ft_printf/ft_printf.h"
 
 /* *************************************** */
 /* Structs                                 */
@@ -46,8 +46,17 @@ typedef struct s_strategy
 	void		(*sort)(t_stack *a, t_stack *b);
 }	t_strategy;
 
+typedef struct s_opts
+{
+	const t_strategy	*strategy;
+	unsigned int		seed;
+	int					bench;
+	int					size;
+	int					runs;
+}	t_opts;
+
 /* *************************************** */
-/* functions                               */
+/* Functions                               */
 /* *************************************** */
 
 void	sort_simple(t_stack *a, t_stack *b);
@@ -55,4 +64,11 @@ void	sort_medium(t_stack *a, t_stack *b);
 void	sort_complex(t_stack *a, t_stack *b);
 void	sort_adaptive(t_stack *a, t_stack *b);
 
+int		parse_args(int argc, char **argv, t_opts *opts, t_stack *a);
+int		parse_flags(int argc, char **argv, t_opts *opts, int *operands);
+int		fill_stack(int argc, char **argv, int start, t_stack *a);
+
+void	stack_init(t_stack *s);
+int		stack_append(t_stack *s, int value);
+void	stack_clear(t_stack *s);
 #endif

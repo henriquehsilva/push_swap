@@ -6,40 +6,55 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/06/17 07:50:16 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/06/18 08:51:23 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME 	= push_swap
 
-CC      = cc
-CFLAGS  = -Wall -Wextra -Werror
-RM      = rm -rf
-LIBFT_DIR = ./libft
-LIBFT   = $(LIBFT_DIR)/libft.a
-SRC    = \
-		main.c
+NAME			= push_swap
+CC				= cc
+CFLAGS			= -Wall -Wextra -Werror
+RM				= rm -f
 
-OBJ = $(SRC:.c=.o)
+LIBFT_DIR		= ./libft
+FT_PRINTF_DIR	= ./ft_printf
+LIBFT			= $(LIBFT_DIR)/libft.a
+FT_PRINTF		= $(FT_PRINTF_DIR)/ft_printf.a
 
-all: $(LIBFT) $(NAME)
+INCLUDES		= -I. -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR)
 
-$(LIBFT):
+SRC				= main.c \
+				  parse_args.c \
+				  parse_flags.c \
+			      fill_stack.c \
+			      stack.c
+OBJ				= $(SRC:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
+	$(CC) $(CFLAGS) $(OBJ) $(FT_PRINTF) $(LIBFT) -o $(NAME)
+
+$(LIBFT): FORCE
 	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+$(FT_PRINTF): FORCE
+	$(MAKE) -C $(FT_PRINTF_DIR)
 
 %.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -I$(LIBFT_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)
 	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C $(FT_PRINTF_DIR) clean
 
 fclean: clean
 	$(RM) $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(MAKE) -C $(FT_PRINTF_DIR) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+FORCE:
+
+.PHONY: all clean fclean re FORCE
