@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:00:19 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/06/18 09:09:20 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/06/19 07:32:39 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	main(int argc, char **argv)
 	if (parse_args(argc, argv, &opts, &a) != 0)
 		error_exit(&a, &b);
 	print_stack(&a);
+	sa(&a);
+	print_stack(&a);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);
@@ -34,9 +36,10 @@ int	main(int argc, char **argv)
 
 static void	error_exit(t_stack *a, t_stack *b)
 {
+	write(2, "Error\n", 6);
 	stack_clear(a);
 	stack_clear(b);
-	write(2, "Error\n", 6);
+	exit(1);
 }
 
 static void	print_stack(t_stack *s)

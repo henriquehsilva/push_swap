@@ -6,7 +6,7 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/06/18 12:21:59 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/06/19 08:37:14 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,11 @@ SRC				= main.c \
 				  parse_args.c \
 				  parse_flags.c \
 			      fill_stack.c \
-			      stack.c
+			      stack.c \
+				  swap.c \
+				  push.c \
+				  reverse.c \
+				  reverse_rotate.c
 OBJ				= $(SRC:.c=.o)
 
 all: $(NAME)

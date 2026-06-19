@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/19 08:18:37 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/06/19 08:25:18 by hhonorio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+static	void	reverse_rotate(t_stack *s)
+{
+	if (!s || s->size < 2)
+		return ;
+}
+
+void	rra(t_stack *a)
+{
+	reverse_rotate(a);
+	write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack *b)
+{
+	reverse_rotate(b);
+	write(1, "rrb\n", 4);
+}
+
+void	rrr(t_stack *a, t_stack *b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+	write(1, "rrr\n", 4);
+}
