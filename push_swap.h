@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 08:27:16 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/06/19 08:40:29 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/06/20 08:20:28 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,7 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+
+int		is_sorted(t_stack *s);
+
 #endif

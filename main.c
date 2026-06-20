@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:00:19 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/06/19 07:32:39 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/06/20 08:38:51 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	main(int argc, char **argv)
 	if (parse_args(argc, argv, &opts, &a) != 0)
 		error_exit(&a, &b);
 	print_stack(&a);
-	sa(&a);
+	ft_printf("Teste\n");
+	ft_printf("%i\n", is_sorted(&a));
 	print_stack(&a);
 	stack_clear(&a);
 	stack_clear(&b);
