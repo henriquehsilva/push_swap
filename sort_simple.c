@@ -6,14 +6,15 @@
 /*   By: marbelas <marbelas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 15:04:23 by marbelas          #+#    #+#             */
-/*   Updated: 2026/07/01 18:25:17 by marbelas         ###   ########.fr       */
+/*   Updated: 2026/07/02 07:32:52 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack *a)
+void	sort_three(t_stack *a, t_stack *b)
 {
+	(void)b;
 	int	node_1;
 	int	node_2;
 	int	node_3;
@@ -44,7 +45,7 @@ void	sort_three(t_stack *a)
 	}
 }
 
-void	sort_simple(t_stack *a)
+void	sort_simple(t_stack *a, t_stack *b)
 {
 	if (a->size == 2)
 	{
@@ -52,5 +53,5 @@ void	sort_simple(t_stack *a)
 			sa(a);
 	}
 	else if (a->size == 3)
-		sort_three(a);
+		sort_three(a, b);
 }

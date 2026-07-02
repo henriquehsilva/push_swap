@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 08:27:16 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/06/20 08:20:28 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/02 07:19:35 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ typedef struct s_opts
 /* *************************************** */
 
 int		parse_args(int argc, char **argv, t_opts *opts, t_stack *a);
+const	t_strategy	*find_strategy(const char *flag);
+const	t_strategy	*get_default_strategy(void);
 int		parse_flags(int argc, char **argv, t_opts *opts, int *operands);
 int		fill_stack(int argc, char **argv, int start, t_stack *a);
 

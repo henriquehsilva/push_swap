@@ -6,7 +6,7 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/06/20 08:44:47 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/07/02 07:23:16 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,9 @@ SRC				= main.c \
 				  push.c \
 				  rotate.c \
 				  reverse_rotate.c \
-				  is_sorted.c
+				  is_sorted.c \
+				  sort_simple.c \
+				  strategies.c
 OBJ				= $(SRC:.c=.o)
 
 all: $(NAME)
