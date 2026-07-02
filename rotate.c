@@ -6,16 +6,25 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 08:01:52 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/06/19 08:18:14 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/02 09:10:44 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void	rotate(t_stack *s)
+static void	rotate(t_stack *s)
 {
+	t_node	*old_top;
+
 	if (!s || s->size < 2)
 		return ;
+	old_top = s->top;
+	s->top = old_top->next;
+	s->top->prev = NULL;
+	old_top->next = NULL;
+	old_top->prev = s->bottom;
+	s->bottom->next = old_top;
+	s->bottom = old_top;
 }
 
 void	ra(t_stack *a)

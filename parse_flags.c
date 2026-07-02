@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 08:39:04 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/02 07:03:45 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/02 08:36:18 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	parse_flags(int argc, char **argv, t_opts *opts, int *operands)
 		i++;
 	}
 	if (!opts->strategy)
-		opts->strategy = get_default_strategy();
+			opts->strategy = get_default_strategy();
 	*operands = i;
 	return (0);
 }

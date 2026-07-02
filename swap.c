@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:37:50 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/06/19 07:55:07 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/02 09:10:10 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,22 @@
 
 static void	swap(t_stack *s)
 {
+	t_node	*first;
+	t_node	*second;
+
 	if (!s || s->size < 2)
 		return ;
+	first = s->top;
+	second = first->next;
+	first->next = second->next;
+	if (second->next)
+		second->next->prev = first;
+	second->prev = first->prev;
+	second->next = first;
+	first->prev = second;
+	s->top = second;
+	if (s->bottom == first)
+		s->bottom = first;
 }
 
 void	sa(t_stack *a)

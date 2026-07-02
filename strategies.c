@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 06:57:47 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/02 07:03:03 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/02 08:58:04 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sort_simple(t_stack *a, t_stack *b);
 static const t_strategy	*get_strategies(void)
 {
 	static const t_strategy	strategies[] = {
-	{"--simple", "simple", "O(n)", sort_simple},
+	{"--simple", "simple", "O(n^2)", sort_simple},
 	{NULL, NULL, NULL, NULL}
 	};
 
