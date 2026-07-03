@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:00:19 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/02 07:57:37 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/03 06:37:08 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv)
 	t_opts	opts;
 	t_stack	a;
 	t_stack	b;
+	double	disorder;
 
 	ft_bzero(&opts, sizeof(opts));
 	stack_init(&a);
@@ -27,7 +28,11 @@ int	main(int argc, char **argv)
 		error_exit(&a, &b);
 	if (!opts.strategy)
 		error_exit(&a, &b);
+	disorder = compute_disorder(&a);
+	stats_reset();
 	opts.strategy->sort(&a, &b);
+	if (opts.bench)
+		stats_print(&opts, disorder);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);

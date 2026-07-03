@@ -1,0 +1,15 @@
+=== push_swap benchmark ===
+Disorder: 100.00%
+Strategy: simple (O(n^2))
+Total operations: 14
+  sa: 0
+  sb: 0
+  ss: 0
+  pa: 5
+  pb: 5
+  ra: 1
+  rb: 0
+  rr: 0
+  rra: 3
+  rrb: 0
+  rrr: 0

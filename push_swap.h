@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 08:27:16 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/02 10:13:11 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/02 12:01:00 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,22 @@ typedef struct s_opts
 	int					runs;
 }	t_opts;
 
+typedef struct s_stats
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	total;
+}	t_stats;
+
 /* *************************************** */
 /* Functions                               */
 /* *************************************** */
@@ -92,4 +108,13 @@ int					is_sorted(t_stack *s);
 
 const t_strategy	*find_strategy(const char *flag);
 const t_strategy	*get_default_strategy(void);
+
+t_stats				*get_stats(void);
+void				stats_reset(void);
+void				stats_print(const t_opts *opts, double disorder);
+void				put_str(const char *s);
+void				put_int(int n);
+void				put_percent(double ratio);
+double				compute_disorder(t_stack *a);
+
 #endif

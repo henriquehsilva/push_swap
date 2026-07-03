@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_flags.c                                      :+:      :+:    :+:   */
+/*   bench_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 08:39:04 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/03 06:35:37 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/07/02 12:02:27 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/07/02 12:02:33 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	parse_flags(int argc, char **argv, t_opts *opts, int *operands)
+void	put_str(const char *s)
 {
-	int	i;
+	write(2, s, ft_strlen(s));
+}
 
-	i = 1;
-	while (i < argc && ft_strncmp(argv[i], "--", 2) == 0)
-	{
-		if (ft_strncmp(argv[i], "--bench", 8) == 0)
-			opts->bench = 1;
-		else
-		{
-			opts->strategy = find_strategy(argv[i]);
-			if (!opts->strategy)
-				return (1);
-		}
-		i++;
-	}
-	if (!opts->strategy)
-			opts->strategy = get_default_strategy();
-	*operands = i;
-	return (0);
+void	put_int(int n)
+{
+	char	*s;
+
+	s = ft_itoa(n);
+	if (!s)
+		return ;
+	write(2, s, ft_strlen(s));
+	free(s);
+}
+
+void	put_percent(double ratio)
+{
+	int	scaled;
+	int	whole;
+	int	frac;
+
+	scaled = (int)(ratio * 10000.0 + 0.5);
+	whole = scaled / 100;
+	frac = scaled % 100;
+	put_int(whole);
+	put_str(".");
+	if (frac < 10)
+		put_str("0");
+	put_int(frac);
+	put_str("%\n");
 }

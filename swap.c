@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 11:37:50 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/02 09:10:10 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/03 06:32:37 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,16 @@ static void	swap(t_stack *s)
 void	sa(t_stack *a)
 {
 	swap(a);
+	get_stats()->sa++;
+	get_stats()->total++;
 	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *b)
 {
 	swap(b);
+	get_stats()->sb++;
+	get_stats()->total++;
 	write(1, "sb\n", 3);
 }
 
@@ -48,5 +52,7 @@ void	ss(t_stack *a, t_stack *b)
 {
 	swap(a);
 	swap(b);
+	get_stats()->ss++;
+	get_stats()->total++;
 	write(1, "ss\n", 3);
 }

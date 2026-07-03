@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_flags.c                                      :+:      :+:    :+:   */
+/*   stats.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 08:39:04 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/03 06:35:37 by hhonorio         ###   ########.fr       */
+/*   Created: 2026/07/02 12:01:55 by hhonorio          #+#    #+#             */
+/*   Updated: 2026/07/02 12:02:01 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	parse_flags(int argc, char **argv, t_opts *opts, int *operands)
+t_stats	*get_stats(void)
 {
-	int	i;
+	static t_stats	stats;
 
-	i = 1;
-	while (i < argc && ft_strncmp(argv[i], "--", 2) == 0)
-	{
-		if (ft_strncmp(argv[i], "--bench", 8) == 0)
-			opts->bench = 1;
-		else
-		{
-			opts->strategy = find_strategy(argv[i]);
-			if (!opts->strategy)
-				return (1);
-		}
-		i++;
-	}
-	if (!opts->strategy)
-			opts->strategy = get_default_strategy();
-	*operands = i;
-	return (0);
+	return (&stats);
+}
+
+void	stats_reset(void)
+{
+	ft_bzero(get_stats(), sizeof(t_stats));
 }

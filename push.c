@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 07:53:36 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/02 10:06:45 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/03 06:51:35 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,15 @@ static void	push(t_stack *dst, t_stack *src)
 void	pa(t_stack *a, t_stack *b)
 {
 	push(a, b);
+	get_stats()->pa++;
+	get_stats()->total++;
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *a, t_stack *b)
 {
 	push(b, a);
+	get_stats()->pb++;
+	get_stats()->total++;
 	write(1, "pb\n", 3);
 }
