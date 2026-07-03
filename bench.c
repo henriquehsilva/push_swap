@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:14:11 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/03 08:36:01 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/03 09:12:40 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	print_ops_a(t_stats *st)
 {
+	put_str("[bench] ");
 	put_str("sa: ");
 	put_int(st->sa);
 	put_str("  sb: ");
@@ -29,6 +30,7 @@ static void	print_ops_a(t_stats *st)
 
 static void	print_ops_b(t_stats *st)
 {
+	put_str("[bench] ");
 	put_str("ra: ");
 	put_int(st->ra);
 	put_str("  rb: ");
