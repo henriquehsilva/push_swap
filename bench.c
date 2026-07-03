@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 12:14:11 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/03 07:12:04 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/03 08:36:01 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ static void	print_ops_a(t_stats *st)
 	put_int(st->pa);
 	put_str("  pb: ");
 	put_int(st->pb);
+	put_str("\n");
 }
 
 static void	print_ops_b(t_stats *st)
 {
-	put_str("  ra: ");
+	put_str("ra: ");
 	put_int(st->ra);
 	put_str("  rb: ");
 	put_int(st->rb);
@@ -52,9 +53,9 @@ void	stats_print(const t_opts *opts, double disorder)
 	put_percent(disorder);
 	put_str("[bench] strategy: ");
 	put_str(opts->strategy->name);
-	put_str(" (");
+	put_str(" / ");
 	put_str(opts->strategy->complexity);
-	put_str(")\n");
+	put_str("\n");
 	put_str("[bench] total_ops: ");
 	put_int(st->total);
 	put_str("\n");
