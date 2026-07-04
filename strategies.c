@@ -6,18 +6,20 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 06:57:47 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/03 08:17:43 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/04 08:21:58 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	sort_simple(t_stack *a, t_stack *b);
+void	sort_complex(t_stack *a, t_stack *b);
 
 static const t_strategy	*get_strategies(void)
 {
 	static const t_strategy	strategies[] = {
 	{"--simple", "Simple", "O(n^2)", sort_simple},
+	{"--complex", "Complex", "O(n log n)", sort_complex},
 	{NULL, NULL, NULL, NULL}
 	};
 

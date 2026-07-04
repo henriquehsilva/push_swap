@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 08:27:16 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/02 12:01:00 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/04 08:02:29 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ typedef struct s_stats
 	int	total;
 }	t_stats;
 
+# define QS_A		1
+# define QS_DESC	2
+
 /* *************************************** */
 /* Functions                               */
 /* *************************************** */
@@ -117,4 +120,14 @@ void				put_int(int n);
 void				put_percent(double ratio);
 double				compute_disorder(t_stack *a);
 
+void				op_swap(t_stack *active, int is_a);
+void				op_rotate(t_stack *active, int is_a);
+void				op_reverse_rotate(t_stack *active, int is_a);
+void				op_push(t_stack *active, t_stack *aux, int is_a);
+void				op_push_back(t_stack *active, t_stack *aux, int is_a);
+
+int					partition(t_stack *active, t_stack *aux, \
+								int size, int mode);
+void				sort_two(t_stack *active, int mode);
+void				sort_three_generic(t_stack *active, int mode);
 #endif
