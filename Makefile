@@ -6,7 +6,7 @@
 #    By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/07/04 08:19:03 by hhonorio         ###   ########.fr        #
+#    Updated: 2026/07/08 06:59:35 by hhonorio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,13 +59,9 @@ $(FT_PRINTF):
 
 clean:
 	$(RM) $(OBJ)
-	$(MAKE) -C $(LIBFT_DIR) clean
-	$(MAKE) -C $(FT_PRINTF_DIR) clean
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) -C $(LIBFT_DIR) fclean
-	$(MAKE) -C $(FT_PRINTF_DIR) fclean
 
 re: fclean all
 
