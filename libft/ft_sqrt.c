@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_adaptive.c                                    :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marbelas <marbelas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/11 11:17:18 by marbelas          #+#    #+#             */
-/*   Updated: 2026/07/11 11:45:35 by marbelas         ###   ########.fr       */
+/*   Created: 2026/07/11 12:31:37 by marbelas          #+#    #+#             */
+/*   Updated: 2026/07/11 13:23:02 by marbelas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sort_adaptive(t_stack *a, t_stack *b)
+int	ft_sqrt(int nb)
 {
-	double	disorder;
+	int	i;
 
-	if (is_sorted(a))
-		return ;
-	disorder = compute_disorder(a);
-	if (disorder < DISORDER_LOW)
-		sort_simple(a, b);
-	else if (disorder < DISORDER_MED)
-		sort_simple(a, b);
-	else
-		sort_complex(a, b);
+	i = 0;
+	if (nb <= 0)
+		return (0);
+	while (i * i <= nb)
+	{
+		if (i * i == nb)
+			return (i);
+	i++;
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: marbelas <marbelas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/28 16:02:56 by hhonorio          #+#    #+#              #
-#    Updated: 2026/07/11 11:38:17 by marbelas         ###   ########.fr        #
+#    Updated: 2026/07/11 13:24:28 by marbelas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC				= main.c \
 				  bench_utils.c \
 				  stats.c \
 				  compute_disorder.c \
+				  sort_medium.c \
 				  sort_complex_ops.c \
 				  sort_complex_base.c \
 				  sort_complex.c \
