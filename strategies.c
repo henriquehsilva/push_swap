@@ -3,23 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   strategies.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marbelas <marbelas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 06:57:47 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/04 08:21:58 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/11 11:38:34 by marbelas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	sort_simple(t_stack *a, t_stack *b);
+//void	sort_medium(t_stack *a, t_stack *b);
 void	sort_complex(t_stack *a, t_stack *b);
+void	sort_adaptive(t_stack *a, t_stack *b);
 
 static const t_strategy	*get_strategies(void)
 {
 	static const t_strategy	strategies[] = {
 	{"--simple", "Simple", "O(n^2)", sort_simple},
+	//{"--medium", "Medium", "0(n_sqrt n)", sort_medium},
 	{"--complex", "Complex", "O(n log n)", sort_complex},
+	{"--adaptive", "Adaptive", "0(n^2), 0(n_sqrt n),  O(n log n)", sort_adaptive},
 	{NULL, NULL, NULL, NULL}
 	};
 
@@ -28,7 +32,7 @@ static const t_strategy	*get_strategies(void)
 
 const t_strategy	*get_default_strategy(void)
 {
-	return (&get_strategies()[0]);
+	return (&get_strategies()[3]);
 }
 
 const t_strategy	*find_strategy(const char *flag)

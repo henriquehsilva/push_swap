@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhonorio <hhonorio@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marbelas <marbelas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 08:27:16 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/04 08:02:29 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/11 11:23:02 by marbelas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,9 @@ typedef struct s_stats
 
 # define QS_A		1
 # define QS_DESC	2
+
+# define DISORDER_LOW 0.2
+# define DISORDER_MED 0.5 
 
 /* *************************************** */
 /* Functions                               */
