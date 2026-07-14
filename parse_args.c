@@ -20,5 +20,6 @@ int	parse_args(int argc, char **argv, t_opts *opts, t_stack *a)
 		return (1);
 	if (fill_stack(argc, argv, operands, a) != 0)
 		return (1);
+	normalize_stack(a);
 	return (0);
 }
