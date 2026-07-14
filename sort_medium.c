@@ -36,7 +36,12 @@ static void	push_a(t_stack *a, t_stack *b)
 	while (b->size > 0)
 	{
 		if (b->top && b->top->value == target - 1)
+		{
 			pa(a, b);
+			target--;
+			if (b->size == 0)
+				break ;
+		}
 		position = get_pos(b, target);
 		if (position <= b->size / 2)
 			while (b->top->value != target)
@@ -46,10 +51,7 @@ static void	push_a(t_stack *a, t_stack *b)
 				rrb(b);
 		pa(a, b);
 		if (a->size > 1 && a->top->value > a->top->next->value)
-		{
 			sa(a);
-			target--;
-		}
 		target--;
 	}
 }
