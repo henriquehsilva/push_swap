@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+void	sort_three(t_stack *a, t_stack *b);
+
 static int	get_pos(t_stack *b, int target)
 {
 	int		i;
@@ -21,8 +23,8 @@ static int	get_pos(t_stack *b, int target)
 	i = 0;
 	while (tmp->value != target)
 	{
-		i++;
 		tmp = tmp->next;
+		i++;
 	}
 	return (i);
 }
@@ -35,7 +37,7 @@ static void	push_a(t_stack *a, t_stack *b)
 	target = b->size - 1;
 	while (b->size > 0)
 	{
-		if (b->top && b->top->value == target - 1)
+		if (b->top && b->top->value == target)
 		{
 			pa(a, b);
 			target--;
@@ -76,6 +78,15 @@ static void	push_logic(t_stack *a, t_stack *b, int *i, int chunk)
 		ra(a);
 }
 
+static void	check_sort(t_stack *a, t_stack *b)
+{
+	if (a->size == 2 && !is_sorted(a))
+		ra(a);
+	else if (a->size == 3)
+		sort_three(a, b);
+	return ;
+}
+
 void	sort_medium(t_stack *a, t_stack *b)
 {
 	int	chunk;
@@ -85,7 +96,11 @@ void	sort_medium(t_stack *a, t_stack *b)
 		return ;
 	i = 0;
 	chunk = ft_sqrt(a->size);
+	check_sort(a, b);
 	while (a->top)
+	{
 		push_logic(a, b, &i, chunk);
+		i++;
+	}
 	push_a(a, b);
 }
