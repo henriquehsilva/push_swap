@@ -42,7 +42,8 @@ SRC				= main.c \
 				  sort_complex_ops.c \
 				  sort_complex_base.c \
 				  sort_complex.c \
-				  sort_adaptive.c 
+				  sort_adaptive.c \
+					normalize_stack.c 
 OBJ				= $(SRC:.c=.o)
 
 all: $(NAME)
