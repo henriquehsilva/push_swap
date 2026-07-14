@@ -22,7 +22,7 @@ void	sort_adaptive(t_stack *a, t_stack *b)
 	if (disorder < DISORDER_LOW)
 		sort_simple(a, b);
 	else if (disorder < DISORDER_MED)
-		sort_simple(a, b);
+		sort_medium(a, b);
 	else
 		sort_complex(a, b);
 }
