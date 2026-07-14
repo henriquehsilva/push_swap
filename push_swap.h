@@ -133,4 +133,5 @@ int					partition(t_stack *active, t_stack *aux, \
 								int size, int mode);
 void				sort_two(t_stack *active, int mode);
 void				sort_three_generic(t_stack *active, int mode);
+void				normalize_stack(t_stack *a);
 #endif
