@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marbelas <marbelas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 11:25:25 by marbelas          #+#    #+#             */
-/*   Updated: 2026/07/11 13:29:46 by marbelas         ###   ########.fr       */
+/*   Updated: 2026/07/18 09:13:25 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	sort_medium(t_stack *a, t_stack *b)
 {
 	int	chunk;
 	int	i;
-	
+
 	if (is_sorted(a))
 		return ;
 	i = 0;
