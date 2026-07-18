@@ -6,7 +6,7 @@
 /*   By: hhonorio <hhonorio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 06:57:47 by hhonorio          #+#    #+#             */
-/*   Updated: 2026/07/18 09:13:33 by hhonorio         ###   ########.fr       */
+/*   Updated: 2026/07/18 11:17:54 by hhonorio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static const t_strategy	*get_strategies(void)
 	{"--simple", "Simple", "O(n^2)", sort_simple},
 	{"--medium", "Medium", "0(n sqrt(n))", sort_medium},
 	{"--complex", "Complex", "O(n log n)", sort_complex},
-	{"--adaptive", "Adaptive", "0(n^2), \
-		0(n sqrt(n)), O(n log n)", sort_adaptive},
+	{"--adaptive", \
+		"Adaptive", "0(n^2), 0(n sqrt(n)), O(n log n)", sort_adaptive},
 	{NULL, NULL, NULL, NULL}
 	};
 
